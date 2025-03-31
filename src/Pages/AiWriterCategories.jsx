@@ -1,32 +1,39 @@
 import $ from 'jquery';
 import 'datatables.net';
+// import 'datatables.net-dt/css/jquery.dataTables.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect } from 'react';
 
 
-const ChatCategories = () => {
-  const categories = [
-    { name: 'Customer Support', user: 'Admin' },
-    { name: 'Entertainment', user: 'System' },
-  ];
-  useEffect(() => {
-  // Initialize DataTable when component mounts
-  const table = $('#userTable').DataTable({
-      paging: true,
-      searching: true,
-      lengthChange: true,
-      info: true,
-  });
-  
-  // Optional: Search functionality using input field
-  $('#tableSearch').on('keyup', function () {
-      table.search(this.value).draw();
-  });
-  
-  // Cleanup DataTable instance when component unmounts
-  return () => {
-      table.destroy();
-  };
-  }, []);
+const AiWriterCategories = () => {
+    const categories = [
+        { name: 'academic', user: 'System' },
+        { name: 'advertisement', user: 'System' },
+        { name: 'Blog', user: 'System' },
+        { name: 'Blog A', user: 'System' },
+      ];
+    
+     
+useEffect(() => {
+// Initialize DataTable when component mounts
+const table = $('#userTable').DataTable({
+    paging: true,
+    searching: true,
+    lengthChange: true,
+    info: true,
+});
+
+// Optional: Search functionality using input field
+$('#tableSearch').on('keyup', function () {
+    table.search(this.value).draw();
+});
+
+// Cleanup DataTable instance when component unmounts
+return () => {
+    table.destroy();
+};
+}, []);
+      
   return (
     <main id="content" role="main" className="main">
       {/* Content */}
@@ -36,11 +43,11 @@ const ChatCategories = () => {
           <div className="row align-items-center">
             <div className="col">
               <h1 className="page-header-title">
-                Chat Categories
-                <span className="add-btn">
+                AI Writer Categories
+                <span className="add-btn float-right">
                   <a
-                    href="/add-chat-categories"
-                    className="float-right btn btn-sm btn-theme right-btn"
+                    href="/add-categories"
+                    className="btn btn-sm btn-theme right-btn"
                   >
                     <svg
                       className="size-5"
@@ -54,18 +61,19 @@ const ChatCategories = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                     >
-                      <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-                      <path d="M16 19h6"></path>
-                      <path d="M19 16v6"></path>
-                      <path d="M6 21v-2a4 4 0 0 1 4 -4h4"></path>
+                      <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                      <path d="M16 19h6" />
+                      <path d="M19 16v6" />
+                      <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
                     </svg>
-                    Add Chat Categories
+                    Add Categories
                   </a>
                 </span>
               </h1>
-              <h6 className="text-muted">Manage Chat Categories</h6>
+              <h6 className="text-muted">Manage AI Writer Categories</h6>
             </div>
           </div>
+          {/* End Row */}
         </div>
         {/* End Page Header */}
 
@@ -82,7 +90,6 @@ const ChatCategories = () => {
                       <th>Action</th>
                     </tr>
                   </thead>
-                  
                   <tbody>
                     {categories.map((category, index) => (
                       <tr key={index}>
@@ -145,6 +152,7 @@ const ChatCategories = () => {
         </div>
         {/* End Stats */}
       </div>
+      {/* End Content */}
 
       {/* Footer */}
       <div className="footer">
@@ -156,8 +164,9 @@ const ChatCategories = () => {
           </div>
         </div>
       </div>
+      {/* End Footer */}
     </main>
   );
 };
 
-export default ChatCategories;
+export default AiWriterCategories;

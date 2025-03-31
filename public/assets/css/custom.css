@@ -225,3 +225,25 @@ overflow: hidden;
   display: block;
 }
 /* ./auth-settings page css */
+
+/* Datatable CSS */
+.dt-container .dt-layout-row{display: flex;
+  justify-content: space-between;
+  align-items: center;}
+  .dt-container .dt-layout-cell .dt-length{display: flex;
+    flex-direction: row-reverse;}
+    .dt-container .dt-layout-cell.dt-layout-full{width:100%}
+    .dt-paging-button.disabled.first,.dt-paging-button.disabled.last{display: none;}
+
+    .dt-paging-button {
+      display: inline-block;
+      border:1px solid #36839b;
+      padding:6px 15px;
+      margin:0 3px;
+    color: #36839b;
+    }
+    .dt-paging-button.current{border: 1px solid #36839b;
+      background-color: #36839b;
+      color: #fff;}
+
+/* ./Datatable CSS */

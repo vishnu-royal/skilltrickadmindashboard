@@ -173,3 +173,18 @@ new Promise((resolve, reject) => {
     location.reload()
   })
 })
+
+
+
+$(document).ready(function () {
+  var table = $('#userTable').DataTable({
+      paging: true,
+      searching: true,
+      lengthChange: true,
+      info: true
+  });
+  
+  $('#tableSearch').on('keyup', function () {
+      table.search(this.value).draw();
+  });
+});
